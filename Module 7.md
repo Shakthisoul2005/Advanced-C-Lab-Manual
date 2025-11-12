@@ -15,13 +15,43 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Person {
+    char name[50];
+    int age;
+};
 
+int main() {
+    int n;
+    printf("Enter number of persons: ");
+    scanf("%d", &n);
 
+    struct Person people[n];
+
+    
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter name of person %d: ", i + 1);
+        scanf("%s", people[i].name);
+        printf("Enter age of person %d: ", i + 1);
+        scanf("%d", &people[i].age);
+    }
+
+    printf("\n--- Vaccine Eligibility List ---\n");
+    for (int i = 0; i < n; i++) {
+        if (people[i].age > 6)
+            printf("%s (Age: %d) is eligible for the vaccine.\n", people[i].name, people[i].age);
+        else
+            printf("%s (Age: %d) is NOT eligible for the vaccine.\n", people[i].name, people[i].age);
+    }
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
+<img width="583" height="445" alt="Screenshot 2025-11-12 112539" src="https://github.com/user-attachments/assets/1e85d595-aecf-4fe6-a97b-89713f5028bc" />
 
 
 Result:
@@ -43,19 +73,39 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Student {
+    char name[50];
+    int marks1;
+    int marks2;
+    int marks3;
+    float average;
+};
 
+struct Student calculateAverage(struct Student s) {
+    s.average = (s.marks1 + s.marks2 + s.marks3) / 3.0;
+    return s;
+}
 
+int main() {
+    struct Student st, result;
 
+    printf("Enter name: ");
+    scanf("%s", st.name);
+    printf("Enter three subject marks: ");
+    scanf("%d %d %d", &st.marks1, &st.marks2, &st.marks3);
 
+    result = calculateAverage(st);
+
+    printf("\nName: %s\nAverage Marks: %.2f\n", result.name, result.average);
+
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
+<img width="399" height="219" alt="Screenshot 2025-11-12 112825" src="https://github.com/user-attachments/assets/39f4ed3c-6be6-4ce8-b387-31446308e86c" />
 
 Result:
 Thus, the program is verified successfully
@@ -85,16 +135,32 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    char filename[100];
+    FILE *file;
 
+    printf("Enter the file name: ");
+    scanf("%s", filename);
 
+    file = fopen(filename, "r");
 
+    if (file == NULL) {
+        printf("Unable to open file %s\n", filename);
+    } else {
+        printf("File %s opened successfully.\n", filename);
+        fclose(file);
+    }
 
+    return 0;
+}
+```
 Output:
 
 
-//paste your output here
+
 
 
 
@@ -186,16 +252,37 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct Student {
+    int rollNo;
+    char name[50];
+    float marks;
+};
 
+int main() {
+    struct Student s;
 
+    printf("Enter Roll Number: ");
+    scanf("%d", &s.rollNo);
+    printf("Enter Name: ");
+    scanf("%s", s.name);
+    printf("Enter Marks: ");
+    scanf("%f", &s.marks);
 
+    printf("\n--- Student Details ---\n");
+    printf("Roll Number: %d\n", s.rollNo);
+    printf("Name: %s\n", s.name);
+    printf("Marks: %.2f\n", s.marks);
 
+    return 0;
+}
+```
 Output:
 
+<img width="305" height="296" alt="Screenshot 2025-11-12 113221" src="https://github.com/user-attachments/assets/33b4f861-abc8-4ce1-bfa0-0291514673d4" />
 
-//paste your output here
 
 
 
