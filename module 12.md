@@ -302,7 +302,6 @@ int main() {
 ```
 
 Output:
-
 <img width="431" height="232" alt="image" src="https://github.com/user-attachments/assets/88265f82-4e4a-47e7-872e-1dbaca116c2d" />
 
 
